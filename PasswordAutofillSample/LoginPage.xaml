@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:PasswordAutofillSample"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PasswordAutofillSample.LoginPage"
+    ios:Page.UseSafeArea="true"
+    Title="Login page">
+    <StackLayout
+        Padding="12"
+        Orientation="Vertical"
+        VerticalOptions="Fill"
+        HorizontalOptions="Fill">
+        <Label
+            Text="Login"
+            FontSize="Large"
+            HorizontalTextAlignment="Center" />
+        <Entry
+            x:Name="username"
+            Keyboard="Default"
+            TextChanged="Handle_TextChanged"
+            ReturnType="Next"
+            Completed="Handle_UsernameCompleted"
+            TabIndex="1"
+            Placeholder="Username">
+            <Entry.Effects>
+                <local:AutofillEffect
+                    Type="Username" />
+            </Entry.Effects>
+        </Entry>
+        <Entry
+            x:Name="password"
+            IsPassword="true"
+            TextChanged="Handle_TextChanged"
+            ReturnType="Done"
+            TabIndex="2"
+            IsTabStop="true"
+            Placeholder="Password">
+            <Entry.Effects>
+                <local:AutofillEffect
+                    Type="Password" />
+            </Entry.Effects>
+        </Entry>
+        <Button
+            x:Name="login"
+            IsEnabled="false"
+            Text="Log In"
+            HorizontalOptions="EndAndExpand"
+            Clicked="Handle_Clicked" />
+        <ActivityIndicator
+            x:Name="indicator"
+            Color="Navy"
+            IsRunning="true"
+            IsVisible="false" />
+    </StackLayout>
+</ContentPage>

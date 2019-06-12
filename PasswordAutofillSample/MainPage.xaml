@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:PasswordAutofillSample"
+    x:Class="PasswordAutofillSample.MainPage"
+    Title="Main page">
+    <StackLayout
+        Orientation="Vertical">
+        <Label
+            Text="Welcome!"
+            HorizontalTextAlignment="Center"
+            FontSize="Large" />
+        <Button
+            Text="Log out"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Clicked="Handle_LogOutClicked" />
+    </StackLayout>
+</ContentPage>
